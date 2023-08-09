@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>juego</title>
+    <!-- BOOTSWATCH COSMO THEME CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cosmo/bootstrap.min.css">
+    <!-- FONT AWESOME -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/juego.css">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark bg-warning">
+        <a class="navbar-brand mx-auto" href="/">
+     mx
+    </a>
+    </nav>
+
+    <div class="container p-4">
+        <!-- NICKNAME FORM -->
+        <div id="nickWrap">
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Nombre de usuario</h3>
+                        </div>
+                        <p id="nickError"></p>
+                        <div class="card-body">
+                            <form id="nickForm">
+                                <input id="nickname" type="text" class="form-control" autofocus />
+                                <input type="submit" class="btn btn-warning btn-block mt-2" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHAT CONTAINER -->
+        <div id="contentWrap">
+            <div>
+                <div id="titulo"></div>
+
+                <div id="bannerRotarTelefono" class="esconder">
+                    <div>Usa tu teléfono en modo horizontal para jugar</div>
+                    <button id="botonCerrarBanner">OK</button>
+                </div>
+                <div id="contenedorJuego">
+                    <div id="contenedorNintendo">
+                        <div id="puntos">PUNTOS: 0</div>
+                        <div id="juegoOverlay">
+
+                            <canvas id="juegoCanvas" width="600" height="600"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <button class="btn btn-primary " id="guardar" type="button">Guardar</button>
+
+            <div class="row">
+                <div class="d-flex justify-content-end">
+                    <div class="card">
+                        <!-- CARD HEADER-->
+                        <div class="card-header bg-dark text-white">
+                            <h4>Chat</h3>
+                        </div>
+
+                        <!-- CARD BODY-->
+                        <div id="chat" class="card-body"></div>
+
+                        <!-- CARD FOOTER -->
+                        <form id="message-form" class="card-footer">
+                            <div class="input-group">
+                                <input type="text" id="message" class="form-control" />
+                                <div class="input-group-append">
+                                    <button class="btn btn-warning">
+                    <i class="fas fa-location-arrow"></i> Send
+                  </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- USERS SECTION-->
+                <div class="col-md-4" id="usersh">
+                    <div class="card">
+                        <div class="card-header bg-dark text-white">
+                            <h3>Usuarios en linea</h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="usernames"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/culebrita.js"></script>
+</body>
+
+</html>
